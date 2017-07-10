@@ -139,8 +139,8 @@
              var projectImage = HTMLprojectImage.replace("%data%", projects.project[pro].image[0]);
              $(".project-entry:last").append(projectImage);
 
-             var projectImage = HTMLprojectImage.replace("%data%", projects.project[pro].image[1]);
-             $(".project-entry:last").append(projectImage);
+             var projectImage2 = HTMLprojectImage.replace("%data%", projects.project[pro].image[1]);
+             $(".project-entry:last").append(projectImage2);
 
 
          }
