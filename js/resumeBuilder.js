@@ -34,9 +34,6 @@
  }
  contactDetail();
 
-
-
-
  var bio = {
      "name": "Harsh Vidyarthi",
      "role": "Frontend webdeveloper",
@@ -110,8 +107,6 @@
      }
  };
  work.display();
-
-
 
  var projects = {
      project: [{
