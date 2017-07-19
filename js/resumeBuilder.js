@@ -17,10 +17,10 @@
          display: function() {
              var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
              var formattedName = HTMLheaderName.replace("%data%", bio.name);
-             var contactgit = HTMLgithub.replace("%data%", bio.github);
              var formattedpic = HTMLbioPic.replace("%data%", bio.bioPic);
              var contactwelmsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
              var contactemail = HTMLemail.replace("%data%", bio.contacts.email);
+             var contactgit = HTMLgithub.replace("%data%", bio.contacts.github);
              var contactmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
              var contacttwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
              var contactlocation = HTMLlocation.replace("%data%", bio.contacts.location);
