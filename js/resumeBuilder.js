@@ -1,5 +1,4 @@
- function contactDetail() {
-     var bio = {
+      var bio = {
          name: "Harsh Vidyarthi",
          role: "Frontend Ninja",
          contacts: {
@@ -10,17 +9,17 @@
              location:"New Delhi, India"
          },
          welcomeMessage: "Hi! I'm Harsh a Graphic Designer and Web Developer",
-         skills: ["HTML5", "CSS3", "Javascript", "CanvasJS", "Adobe Creative Suite"],
+         skills: ["HTML5", "CSS3", "Javascript", "CanvasJS"],
          bioPic: "images/f.jpg",
 
 
          display: function() {
              var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
              var formattedName = HTMLheaderName.replace("%data%", bio.name);
+             var contactgit = HTMLgithub.replace("%data%", bio.contacts.github);
              var formattedpic = HTMLbioPic.replace("%data%", bio.bioPic);
              var contactwelmsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
              var contactemail = HTMLemail.replace("%data%", bio.contacts.email);
-             var contactgit = HTMLgithub.replace("%data%", bio.contacts.github);
              var contactmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
              var contacttwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
              var contactlocation = HTMLlocation.replace("%data%", bio.contacts.location);
@@ -47,7 +46,7 @@
          }
      };
      bio.display();
- }
+
 
  var work = {
      "jobs": [{
@@ -108,7 +107,7 @@
 
  var projects = {
      projects: [{
-         title: "animal fendt ",
+         title: ["Animal fendt ","Portfolio"],
          dates: "20th may 2017",
          description: "Lorem ipsum dolor sit amet, case doctus partiendo vis ad, an oporteat vulputate ius, in sea quis petentium assueverit. In viris exerci propriae qui, duis quaeque et quo. Ne dicta saperet vel, possim aeterno scriptorem cu nec. Quo exerci quaestio dissentiunt eu, eum in dico mollis expetendis. Eam et facilisis urbanitas, postea partiendo vel an.",
          image: [
@@ -144,21 +143,21 @@
  var education = {
      schools: [{
              name: "ag church school",
-             location: "bettiah",
+             location: "Bettiah",
              degree: "sslc",
              dates: "15th may 2014",
              majors: ["cse"]
          },
          {
              name: "ms public school",
-             location: "karnataka",
+             location: "Karnataka",
              degree: "sslc",
              dates: "15th may 2014",
              majors: ["cse"]
          },
          {
              name: "rnsit public school",
-             location: "bangalore",
+             location: "Bangalore",
              degree: "hsslc",
              dates: "15th may 2014",
              majors: ["cse"]
@@ -220,9 +219,12 @@
 
      }
 
+
  };
 
  $("#mapDiv").append(googleMap);
+
+
  $(document).click(function(loc) {
      // your code goes here
      var x = loc.pageX;
@@ -230,7 +232,7 @@
      logClicks(x, y);
  });
 
- contactDetail();
+
  work.display();
  projects.display();
  education.display();
