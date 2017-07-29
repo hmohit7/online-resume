@@ -2,26 +2,28 @@
          name: "Harsh Vidyarthi",
          role: "Frontend Ninja",
          contacts: {
-             mobile: "+919880013407",
-             email: "hmohit7@gmail.com",
-             github: "hmohit7",
-             twitter: "@hmohit7",
+             mobile:"+919880013407",
+             email:"hmohit7@gmail.com",
+             github:"hmohit7",
+             twitter:"@hmohit7",
+             blog:"lyf21.com",
              location:"New Delhi, India"
          },
          welcomeMessage: "Hi! I'm Harsh a Graphic Designer and Web Developer",
          skills: ["HTML5", "CSS3", "Javascript", "CanvasJS"],
-         bioPic: "images/f.jpg",
+         biopic: "images/f.jpg",
 
 
          display: function() {
              var formattedRole = HTMLheaderRole.replace("%data%", bio.role);
              var formattedName = HTMLheaderName.replace("%data%", bio.name);
              var contactgit = HTMLgithub.replace("%data%", bio.contacts.github);
-             var formattedpic = HTMLbioPic.replace("%data%", bio.bioPic);
+             var formattedpic = HTMLbioPic.replace("%data%", bio.biopic);
              var contactwelmsg = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
              var contactemail = HTMLemail.replace("%data%", bio.contacts.email);
              var contactmobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
              var contacttwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+             var contactblog = HTMLblog.replace("%data%", bio.contacts.blog);
              var contactlocation = HTMLlocation.replace("%data%", bio.contacts.location);
              var allContacts = contactemail + contactmobile +contactgit +contacttwitter+contactlocation;
 
@@ -31,6 +33,7 @@
              $("#header").append(contactemail);
              $("#header").append(contacttwitter);
              $("#header").append(contactgit);
+             $("#header").append(contactblog);
              $("#header").append(contactlocation);
              $("#header").append(formattedpic);
              $("#header").append(contactwelmsg);
@@ -45,7 +48,7 @@
              }
          }
      };
-     bio.display();
+
 
 
  var work = {
@@ -110,11 +113,7 @@
          title: ["Animal fendt ","Portfolio"],
          dates: "20th may 2017",
          description: "Lorem ipsum dolor sit amet, case doctus partiendo vis ad, an oporteat vulputate ius, in sea quis petentium assueverit. In viris exerci propriae qui, duis quaeque et quo. Ne dicta saperet vel, possim aeterno scriptorem cu nec. Quo exerci quaestio dissentiunt eu, eum in dico mollis expetendis. Eam et facilisis urbanitas, postea partiendo vel an.",
-         image: [
-
-             "images/k.jpg",
-             "images/port.jpg"
-         ]
+         images: ["images/port.jpg","images/k.jpg"]
      }],
      display: function() {
          $("#projects").append(HTMLprojectStart);
@@ -127,11 +126,12 @@
              var projectDescription = HTMLprojectDescription.replace("%data%", projects.projects[pro].description);
              $(".project-entry:last").append(projectDescription);
 
-             var projectImage = HTMLprojectImage.replace("%data%", projects.projects[pro].image[0]);
+             projects.projects[pro].images.forEach(function(cv,i,array){
+             var projectImage = HTMLprojectImage.replace("%data%", projects.projects[pro].images[i]);
              $(".project-entry:last").append(projectImage);
 
-             var projectImage2 = HTMLprojectImage.replace("%data%", projects.projects[pro].image[1]);
-             $(".project-entry:last").append(projectImage2);
+             });
+
 
 
          });
@@ -150,7 +150,7 @@
          },
          {
              name: "ms public school",
-             location: "Karnataka",
+             location: "Bhopal",
              degree: "sslc",
              dates: "15th may 2014",
              majors: ["cse"]
@@ -232,7 +232,7 @@
      logClicks(x, y);
  });
 
-
+ bio.display();
  work.display();
  projects.display();
  education.display();
